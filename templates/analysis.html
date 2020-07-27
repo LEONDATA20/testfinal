@@ -26,7 +26,7 @@
     <div>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="bbb">
           <div class="container-fluid">
-            <a class="navbar-brand" href="http://localhost:5000/">Myers-Briggs Prediction</a>
+            <a class="navbar-brand" href="/">Myers-Briggs Prediction</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -37,13 +37,13 @@
                     Learn More
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="background.html" target="_blank">Background</a>
-                      <a class="dropdown-item" href="results.html" target="_blank">Results</a>
-                      <a class="dropdown-item" href="analysis.html" target="_blank">Analysis</a>
+                      <a class="dropdown-item" href={{ url_for('background', filename='background.html') }} target="_blank">Background</a>
+                      <a class="dropdown-item" href="/" target="_blank">Results</a>
+                      <a class="dropdown-item" href="{{url_for('analysis', filename='analysis.html') }}" target="_blank">Analysis</a>
                     </div>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="prediction.html">Predict</a>
+                    <a class="nav-link" target="_blank" href={{ url_for('predict', filename='prediction.html') }}>Predict</a>
                   </li>
                 </ul>
             </div>
