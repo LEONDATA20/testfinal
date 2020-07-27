@@ -10,9 +10,11 @@ import joblib
 
 # import scrape_aqiheroku
 
+
+
 # Create an instance of Flask
 #can be used to specify a different path for the static files on the web. Defaults to the name of the static_folder folder.
-app = Flask(__name__, static_url_path="") 
+app = Flask(__name__) 
 
 scaler = joblib.load( "scaler.save")
 modelIE = load_model("modelIE.h5")
