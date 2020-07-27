@@ -3,7 +3,9 @@ from tensorflow.keras.models import load_model
 import numpy as np
 import pandas as pd
 from textblob import TextBlob
-from sklearn.externals import joblib
+import sklearn.externals
+import joblib
+# from sklearn.externals import joblib
 
 
 # import scrape_aqiheroku
