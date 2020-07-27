@@ -54,7 +54,7 @@ def analysis():
 def predict():
     if request.method == 'GET':
         # return 'Hello World'
-        return render_template('.html')
+        return render_template('prediction.html')
     if request.method == 'POST':
         # You just call to_dict on the request.form object and you get a dictionary you can work with.
 
