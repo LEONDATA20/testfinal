@@ -105,8 +105,8 @@ def predict():
 #     output = prediction[0]
 #     return jsonify(output)
 
-#if __name__ == "__main__":
-#    app.run(debug=True, port=5000)
+if __name__ == "__main__":
+    app.run(threaded=True, debug=True, port=5000)
 
 
 
