@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML API</title>
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+  <h1>Predict Personality</h1>
+
+ <div class="login">
+     <!-- Main Input For Receiving Query to our ML -->
+     <!-- predict function-->
+    <form action="{{ url_for('predict')}}" method='post'>
+      <h4>1. You are totally exhausted because your week was endless and less than great. How are you going to spend your weekend?</h3>
+      <!--required means no text, no submit-->
+      <input type="text" name="posts" placeholder="comments" required="required" />
+      <h4>2. A competitor of your current employer is trying to entice you. You have doubts because the salary is much higher there, but the staff here is great. Moreover, the head of your department hinted that he will recommend you to the bosses when he retires. How are you going to make a decision?</h3>
+      <input type="text" name="test_score" placeholder="Test Score" required="required" />
+      <h4>3. Only 2 weeks are left before your close friends' wedding. How are the preparations going?</h3>
+		  <input type="text" name="interview_score" placeholder="Interview Score" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   <div >
+
+     <!-- list-style: none no dot -->
+      <ul style="list-style: none;" class='liststyle'>
+        {% for x in prediction_text%}
+              <li class='listyle'>{{ x }}</li>
+        {% endfor %}      
+      </ul>
+      <!-- <ul style="list-style: none;" class='liststyle'>
+        {% for x in test_result %}
+              <li>{{ x }}</li>
+        {% endfor %}      
+      </ul> -->
+   </div>
+   
+
+ </div>
+
+
+</body>
+</html>
