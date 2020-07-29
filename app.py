@@ -14,7 +14,7 @@ import joblib
 
 # Create an instance of Flask
 #can be used to specify a different path for the static files on the web. Defaults to the name of the static_folder folder.
-app = Flask(__name__) 
+app = Flask(__name__, static_url_path="") 
 
 scaler = joblib.load( "scaler.save")
 modelIE = load_model("modelIE.h5")
@@ -25,19 +25,19 @@ modelNS = load_model("model_testNS.h5")
 
 @app.route('/')
 def home():
-    return render_template('index.html')
-
-@app.route('/background')
-def background():
     return render_template('background.html')
+
+@app.route('/results')
+def results():
+    return render_template('results.html')
 
 @app.route('/analysis')
 def analysis():
     return render_template('analysis.html')
 
-# @app.route("/analysis/<path:path>")
-# def analysis(path):
-#     return send_from_directory('templates/', path)
+@app.route("/image/<path:path>")
+def image(path):
+    return send_from_directory('templates/', path)
 
 # The line @app.route("/", methods = ["GET","POST"]) tells Flask what to do 
 # when we load the home page of our website.
